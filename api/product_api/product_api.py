@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.exceptions import ParseError
 from django.http import JsonResponse
+from .models import Product
 import json
 
 
@@ -35,3 +36,10 @@ class ProductApi(APIView):
                 'number_of_products_unable_to_parse': parse_errors
             }
             return JsonResponse(error_response, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+class GetProductApi(APIView):
+    def get(self, request):
+        products = Product.objects.all()
+        data = [json.loads(str(product)) for product in products]
+        return JsonResponse({'products': data}, status=status.HTTP_200_OK)
