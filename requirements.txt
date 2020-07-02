@@ -4,5 +4,5 @@ djangorestframework==3.11.0
 goodlogging==1.0.1
 pytz==2020.1
 rarfile==2.7
-requests==2.6.0
+requests==2.20.0
 sqlparse==0.3.1
