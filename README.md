@@ -31,3 +31,12 @@ curl -d '{"products": [{"id": "third_id","nam": "no","value": -50,"discount_valu
 
 Response:
 {"status": "Error", "products_report": [], "number_of_products_unable_to_parse": 1}
+
+List products:
+
+curl http://new-django-env.eba-23xez4hn.us-west-2.elasticbeanstalk.com/api/products
+
+Response:
+{"products": []}
+
+
